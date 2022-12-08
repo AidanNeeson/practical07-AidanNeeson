@@ -1,0 +1,42 @@
+# Check for TODOs
+- writing/reflection.md:
+  - description: Make sure writing/reflection.md file exists
+    check: ConfirmFileExists
+  - description: Write a minimum number of meaningful words (100) in the reflection
+    check: CountFileWords
+    options:
+      count: 100
+      exact: false
+  - description: Complete all TODOs in writing/reflection.md
+    check: MatchFileFragment
+    options:
+      fragment: TODO
+      count: 0
+      exact: true
+
+# Check for procedure definitions
+- tests/test_tf_objectoriented.py:
+  - description: Complete all TODOs in tests/test_tf_objectoriented.py
+    check: MatchFileFragment
+    options:
+      fragment: TODO
+      count: 0
+      exact: true
+  - description: Implement three test functions in tests/test_tf_objectoriented.py
+    check: MatchFileFragment
+    options:
+      fragment: "def test"
+      count: 3
+      exact: false
+  - description: Parametrize three tests in tests/test_tf_objectoriented.py
+    check: MatchFileFragment
+    options:
+      fragment: "@pytest.mark.parametrize"
+      count: 3
+      exact: false
+
+# Count number of commits in the GitHub repository
+- description: Have at least a specific minimum number of commits (5) in repository
+  check: CountCommits
+  options:
+    count: 5
