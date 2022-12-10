@@ -52,7 +52,7 @@ super(WordFrequencyManager, self).info()
 
 ## Describe the general steps you took to parametrize the given test
 
-TODO
+The steps I took to parametrize the given test was to first add the parametrize decorator at the top of the function. This allows pytest to see that it is supposed to be a parametrized test. I then looked through the class in question as well as the test provided to find out what variables I would need to include as parameters, and then I added them into the decorator. I then put the specified variable names included in the decorator inside of the function definition as parameters as well. Lastly, I went into the test and removed the hard coded instances of parameters and replaced them with the created variables.
 
 ## Analyze the complexity of the Object-Oriented program. Your response should include at least some of the words, "cognitive load", "change amplification", "unknown unknowns", and "dependencies". Please make sure to write three to five sentences *that contain examples from the program* to support your answer
 
