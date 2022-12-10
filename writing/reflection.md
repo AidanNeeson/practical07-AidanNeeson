@@ -2,7 +2,7 @@
 
 ## Describe the high-level behavior of the Object-Oriented term frequency program
 
-TODO
+The Object-Oriented term frequency program counts the frequency of words in a given text, and displays the 25 most frequent words that are not "stop words".
 
 ## For each of the four constraints associated with the Object-Oriented programming style, provide an example from the Object-Oriented program where the constraint is reflected
 
