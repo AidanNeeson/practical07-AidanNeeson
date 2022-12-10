@@ -31,4 +31,22 @@ def test_StopWordManager_detects_stop_words(word, expected_bool_result):
     # Determine if its correct
     assert is_stop_word == expected_bool_result
 
-# TODO: Test the WordFrequencyManager
+
+@pytest.mark.parametrize(
+    "word_list,expected_sorted_frequencies",
+    [(["good", "good", "good", "hello", "bye", "bye", "bad"], [("good", 3), ("bye", 2), ("hello", 1), ("bad", 1)]),
+    (["okay", "okay", "no", "no", "no", "no", "yes", "why", "why", "why"], [("no", 4), ("why", 3), ("okay", 2), ("yes", 1)])]
+)
+def test_WordFrequencyManager_returns_sorted_counts(word_list, expected_sorted_frequencies):
+    # Given a list of words
+    word_frequency_manager = tf_objectoriented.WordFrequencyManager()
+
+    # Count their frequencies
+    for word in word_list:
+        word_frequency_manager.increment_count(word)
+    
+    # Sort the counts
+    sorted_frequencies = word_frequency_manager.sorted()
+
+    # Determine if its the same
+    assert sorted_frequencies == expected_sorted_frequencies
