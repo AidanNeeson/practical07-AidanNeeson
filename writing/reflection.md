@@ -37,18 +37,18 @@ super(WordFrequencyManager, self).info()
 ## Describe the overall purpose of each of the classes in the Object-Oriented program and the behaviors of the methods listed below
 
 - `WordFrequencyController`
-  - Overall purpose: TODO
-  - Behavior of `run` method: TODO
+  - Overall purpose: To serve as the controller of the purpose of the program. It manages all other objects to, in the end, create a finished frequency counting process.
+  - Behavior of `run` method: It counts the frequency of all words given to it and displays then on the command-line.
 - `DataStorageManager`
-  - Overall purpose: TODO
-  - Behavior of `words` method: TODO
+  - Overall purpose: Reads in and stores the contents of a file in a fashion that it is easily parasable.
+  - Behavior of `words` method: Returns the a list of all of the words in the file.
 - `StopWordManager`
-  - Overall purpose: TODO
-  - Behavior of `is_stop_word` method: TODO
+  - Overall purpose: Creates a filter for all "stop words" and manages that procedure.
+  - Behavior of `is_stop_word` method: Checks if an input word is a "stop word" and then returns True or False.
 - `WordFrequencyManager`
-  - Overall purpose: TODO
-  - Behavior of `increment_count` method: TODO
-  - Behavior of `sorted` method: TODO
+  - Overall purpose: Stores and manages the data about the frequency of the words.
+  - Behavior of `increment_count` method: Either adds a word to the dictionary and sets the count to one, or it increases the count of a word by one.
+  - Behavior of `sorted` method: Returns a a sorted list of tuples that are ordered by their frequency.
 
 ## Describe the general steps you took to parametrize the given test
 
