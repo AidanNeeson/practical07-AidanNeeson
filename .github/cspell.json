@@ -26,7 +26,8 @@
         "objectoriented",
         "gatorgrade",
         "gradebook",
-        "bingley"
+        "bingley",
+        "freqs"
     ],
     "ignorePaths": [
         ".github/**"

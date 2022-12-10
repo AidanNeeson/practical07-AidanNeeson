@@ -30,7 +30,7 @@ for w in self._storage_manager.words():
 
 Objects can reuse procedures defined elsewhere:
 ```python
-# this is procdure is defined in a different class, but is used by each other class
+# this is procedure is defined in a different class, but is used by each other class
 super(WordFrequencyManager, self).info()
 ```
 
@@ -40,7 +40,7 @@ super(WordFrequencyManager, self).info()
   - Overall purpose: To serve as the controller of the purpose of the program. It manages all other objects to, in the end, create a finished frequency counting process.
   - Behavior of `run` method: It counts the frequency of all words given to it and displays then on the command-line.
 - `DataStorageManager`
-  - Overall purpose: Reads in and stores the contents of a file in a fashion that it is easily parasable.
+  - Overall purpose: Reads in and stores the contents of a file in a fashion that it is easily parsed.
   - Behavior of `words` method: Returns the a list of all of the words in the file.
 - `StopWordManager`
   - Overall purpose: Creates a filter for all "stop words" and manages that procedure.
@@ -56,7 +56,7 @@ The steps I took to parametrize the given test was to first add the parametrize 
 
 ## Analyze the complexity of the Object-Oriented program. Your response should include at least some of the words, "cognitive load", "change amplification", "unknown unknowns", and "dependencies". Please make sure to write three to five sentences *that contain examples from the program* to support your answer
 
-The complexity of the Object-Oriented program is, on the surface, a lot more complex than the other methods, but in terms of its actual comlpexity, it is a lot less complex. This is because the cognitive load is even furhter minimized in this program by the use of abstractions at the method and class level like `WordFrequencyController` and `is_stop_word()`. These offer fairly broad, but easy to understand functionality at the interface level that seem to hide much of the complex work that is happening behind the scenes. The only thing increasing cognitive load in this program is the need for understanding dependencies like `re`, `sys`, `string`, and `abc`. In terms of change amplification, it is merely contained to the object within a class. The only time this could ever be affected negatively is if the public interface itself was edited. Unknown unknowns here are increased, however, due to the shared state. 
+The complexity of the Object-Oriented program is, on the surface, a lot more complex than the other methods, but in terms of its actual complexity, it is a lot less complex. This is because the cognitive load is even further minimized in this program by the use of abstractions at the method and class level like `WordFrequencyController` and `is_stop_word()`. These offer fairly broad, but easy to understand functionality at the interface level that seem to hide much of the complex work that is happening behind the scenes. The only thing increasing cognitive load in this program is the need for understanding dependencies like `re`, `sys`, `string`, and `abc`. In terms of change amplification, it is merely contained to the object within a class. The only time this could ever be affected negatively is if the public interface itself was edited. Unknown unknowns here are increased, however, due to the shared state. 
 
 ## Describe your experience unit testing the Object-Oriented program. Was it easier or harder or about the same level of difficulty as unit testing the Cookbook and Pipeline programming styles? Please make sure to write three to five sentences *that contain examples from the tests* to support your answer
 
