@@ -17,6 +17,18 @@ def test_DataStorageManager_populates_data(input_file, expected_length):
     assert len(word_list) == expected_length
 
 
-# TODO: Test the StopWordManager
+@pytest.mark.parametrize(
+    "word,expected_bool_result",
+    [("a", True), ("apple", False)]
+)
+def test_StopWordManager_detects_stop_words(word, expected_bool_result):
+    # Given some stop words
+    stop_words_manager = tf_objectoriented.StopWordManager()
+
+    # Check if its a stop word
+    is_stop_word = stop_words_manager.is_stop_word(word)
+
+    # Determine if its correct
+    assert is_stop_word == expected_bool_result
 
 # TODO: Test the WordFrequencyManager
