@@ -60,4 +60,11 @@ The complexity of the Object-Oriented program is, on the surface, a lot more com
 
 ## Describe your experience unit testing the Object-Oriented program. Was it easier or harder or about the same level of difficulty as unit testing the Cookbook and Pipeline programming styles? Please make sure to write three to five sentences *that contain examples from the tests* to support your answer
 
-TODO
+Overall, it was a lot easier to unit test the Object-Oriented program compared to the Cookbook and Pipeline programs. This is because the shared state in this program did not affect the tests inputs in the same way it did before. It allowed for inputs to be a lot easier to determine, which also made parametrization significantly easier. 
+```python
+@pytest.mark.parametrize(
+    "input_file,expected_length",
+    [("tests/inputs/cats.txt", 12), ("tests/inputs/dogs.txt", 13)]
+)
+```
+As seen above, the process is fairly simple compared to the other tests. The only drawback is needing to create objects in every test by doing something similar to `stop_words_manager = tf_objectoriented.StopWordManager()`, but this ends up being intuitive and not obstructive in the long run, unlike some of the setup for previous tests. The abstractions also helped to determine which processes to test, and which methods should be used to test the processes, which was harder to pick out in the previous programs.
