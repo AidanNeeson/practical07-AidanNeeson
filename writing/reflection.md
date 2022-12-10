@@ -6,13 +6,33 @@ The Object-Oriented term frequency program counts the frequency of words in a gi
 
 ## For each of the four constraints associated with the Object-Oriented programming style, provide an example from the Object-Oriented program where the constraint is reflected
 
-TODO
+Problem being broken down into "things":
+```python
+DataStorageManager(path_to_file)
+StopWordManager()
+WordFrequencyManager()
+```
 
-TODO
+Data and procedures:
+```python
+self._word_freqs = {} # data
 
-TODO
+def increment_count(self, word): # procedure
+```
 
-TODO
+Data only accessed through procedures:
+```python
+# method calls like, `words()`, use the data to accomplish a task, the data is never accessed directly outside of a method
+for w in self._storage_manager.words():
+            if not self._stop_word_manager.is_stop_word(w):
+                self._word_freq_manager.increment_count(w)
+```
+
+Objects can reuse procedures defined elsewhere:
+```python
+# this is procdure is defined in a different class, but is used by each other class
+super(WordFrequencyManager, self).info()
+```
 
 ## Describe the overall purpose of each of the classes in the Object-Oriented program and the behaviors of the methods listed below
 
